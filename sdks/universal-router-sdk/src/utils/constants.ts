@@ -481,6 +481,24 @@ export const CHAIN_CONFIGS: { [key: number]: ChainConfig } = {
       },
     },
   },
+  // Local Anvil development chain
+  [31337]: {
+    weth: '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0',
+    routerConfigs: {
+      [UniversalRouterVersion.V1_2]: {
+        address: '0x0000000000000000000000000000000000000000',
+        creationBlock: 1,
+      },
+      [UniversalRouterVersion.V2_0]: {
+        address: '0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6',
+        creationBlock: 1,
+      },
+      [UniversalRouterVersion.V2_1]: {
+        address: '0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6',
+        creationBlock: 1,
+      },
+    },
+  },
 }
 
 export const UNIVERSAL_ROUTER_ADDRESS = (version: UniversalRouterVersion, chainId: number): string => {

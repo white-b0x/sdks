@@ -31,6 +31,11 @@ export enum ChainId {
   SONEIUM = 1868,
   MONAD = 143,
   XLAYER = 196,
+  // Local development
+  ANVIL = 31337,
+  // Ethereum Classic
+  ETC = 61,
+  MORDOR = 63,
 }
 
 export const SUPPORTED_CHAINS = [
@@ -64,6 +69,9 @@ export const SUPPORTED_CHAINS = [
   ChainId.SONEIUM,
   ChainId.MONAD,
   ChainId.XLAYER,
+  ChainId.ANVIL,
+  ChainId.ETC,
+  ChainId.MORDOR,
 ] as const
 export type SupportedChainsType = (typeof SUPPORTED_CHAINS)[number]
 
@@ -77,4 +85,5 @@ export enum NativeCurrencyName {
   BNB = 'BNB',
   AVAX = 'AVAX',
   ROOTSTOCK = 'RBTC',
+  ETC = 'ETC',
 }

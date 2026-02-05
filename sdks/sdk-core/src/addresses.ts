@@ -63,6 +63,9 @@ export const V2_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.SONEIUM]: '0x97febbc2adbd5644ba22736e962564b23f5828ce',
   [ChainId.MONAD]: '0x182a927119d56008d921126764bf884221b10f59',
   [ChainId.XLAYER]: '0xdf38f24fe153761634be942f9d859f3dba857e95',
+  [ChainId.ANVIL]: '0x8a791620dd6260079bf849dc5567adc3f2fdc318',
+  [ChainId.ETC]: '0x0307cd3D7DA98A29e6Ed0D2137be386Ec1e4Bc9C',
+  [ChainId.MORDOR]: '0x212eE1B5c8C26ff5B2c4c14CD1C54486Fe23ce70',
 }
 /**
  * @deprecated use V2_ROUTER_ADDRESSES instead
@@ -87,6 +90,9 @@ export const V2_ROUTER_ADDRESSES: AddressMap = {
   [ChainId.SONEIUM]: '0x273f68c234fa55b550b40e563c4a488e0d334320',
   [ChainId.MONAD]: '0x4b2ab38dbf28d31d467aa8993f6c2585981d6804',
   [ChainId.XLAYER]: '0x182a927119d56008d921126764bf884221b10f59',
+  [ChainId.ANVIL]: '0x610178da211fef7d417bc0e6fed39f05609ad788',
+  [ChainId.ETC]: '0x79Bf07555C34e68C4Ae93642d1007D7f908d60F5',
+  [ChainId.MORDOR]: '0x6d194227a9A1C11f144B35F96E6289c5602Da493',
 }
 
 // Networks that share most of the same addresses i.e. Mainnet, Goerli, Optimism, Arbitrum, Polygon
@@ -457,6 +463,45 @@ const XLAYER_ADDRESSES: ChainAddresses = {
   v4QuoterAddress: '0x8928074ca1b241d8ec02815881c1af11e8bc5219',
 }
 
+// Local Anvil development chain
+const ANVIL_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0xa51c1fc2f0d1a1b8494ed1fe312d7c3a78ed91c0',
+  multicallAddress: '0x0000000000000000000000000000000000000000', // Not deployed
+  quoterAddress: '0x9a676e781a523b5d0c0e43731313a708cb607508',
+  nonfungiblePositionManagerAddress: '0x9a9f2ccfde556a7e9ff0848998aa4a0cfd8863ae',
+  swapRouter02Address: '0x0dcd1bf9a1b36ce34237eeafef220932846bcd82',
+
+  // V4 contracts
+  v4PoolManagerAddress: '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512',
+  v4PositionManagerAddress: '0x64947D7eae9259757B31853710D0a7103a48e7bd',
+  v4StateView: '0x5FC8d32690cc91D4c39d9d3abcBD16989F875707',
+  v4QuoterAddress: '0x0165878A594ca255338adfa4d48449f69242Eb8F',
+}
+
+// Ethereum Classic mainnet - ETCswap V3 contracts
+const ETC_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0x2624E907BcC04f93C8f29d7C7149a8700Ceb8cDC',
+  multicallAddress: '0x1E4282069e4822D5E6Fb88B2DbDE014f3E0625a9',
+  quoterAddress: '0x4d8c163400CB87Cbe1bae76dBf36A09FED85d39B',
+  v3MigratorAddress: '0x19B067263c36FA09d06bec71B1E1236573D56C00',
+  nonfungiblePositionManagerAddress: '0x3CEDe6562D6626A04d7502CC35720901999AB699',
+  tickLensAddress: '0x23B7Bab45c84fA8f68f813D844E8afD44eE8C315',
+  swapRouter02Address: '0xEd88EDD995b00956097bF90d39C9341BBde324d1',
+  // V4 not available until Olympia upgrade (EIP-1153 required)
+}
+
+// Mordor testnet - Same ETCswap V3 contracts as ETC mainnet
+const MORDOR_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0x2624E907BcC04f93C8f29d7C7149a8700Ceb8cDC',
+  multicallAddress: '0x1E4282069e4822D5E6Fb88B2DbDE014f3E0625a9',
+  quoterAddress: '0x4d8c163400CB87Cbe1bae76dBf36A09FED85d39B',
+  v3MigratorAddress: '0x19B067263c36FA09d06bec71B1E1236573D56C00',
+  nonfungiblePositionManagerAddress: '0x3CEDe6562D6626A04d7502CC35720901999AB699',
+  tickLensAddress: '0x23B7Bab45c84fA8f68f813D844E8afD44eE8C315',
+  swapRouter02Address: '0xEd88EDD995b00956097bF90d39C9341BBde324d1',
+  // V4 not available until Olympia upgrade (EIP-1153 required)
+}
+
 export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses> = {
   [ChainId.MAINNET]: MAINNET_ADDRESSES,
   [ChainId.OPTIMISM]: OPTIMISM_ADDRESSES,
@@ -488,6 +533,9 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.SONEIUM]: SONEIUM_ADDRESSES,
   [ChainId.MONAD]: MONAD_ADDRESSES,
   [ChainId.XLAYER]: XLAYER_ADDRESSES,
+  [ChainId.ANVIL]: ANVIL_ADDRESSES,
+  [ChainId.ETC]: ETC_ADDRESSES,
+  [ChainId.MORDOR]: MORDOR_ADDRESSES,
 }
 
 /* V3 Contract Addresses */
